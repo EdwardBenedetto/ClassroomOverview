@@ -74,11 +74,9 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h2>Your Latest Posts</h2>
+        <h2><%= user.userName %>'s Latest Reads:</h2>
       </div>
-      <div class="col">
-        <button id="seeAllPosts" class="btn greyRoundButton btn-lg" value="See all posts">See All Posts</button>
-      </div>
+      
     </div>
     <div class="row">
       <% for (let i=post.length-1; i>=0; i--) { %>
@@ -117,8 +115,22 @@
           </a>
         </div>
       <% } %>
+      <% for (let i=0;i<(3-post.length%3);i++) { %>
+          <div class="col hidden">
+            <a href="#">
+              <div class="card my-2" style="width: 25rem;">
+                <div class="card-header" style="height: 12rem">
+                                  </div>
+                <div class="card-body" style="height: 15rem">
+                 
+                </div>
+              </div>
+            </a>
+          </div>
+        <% } %>
+          </div>
         </div>
-  </div>
+  </div> 
 </section>
 
 
