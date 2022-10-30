@@ -13,7 +13,6 @@ const xhr = new XMLHttpRequest;
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
 const postRoutes = require('./routes/posts');
-const aboutRoutes = require('./routes/about');
 const feedRoutes = require('./routes/feed');
 const postPageRoutes = require('./routes/postPage');
 
@@ -64,8 +63,6 @@ app.use('/', mainRoutes)
 app.use('/post', postRoutes)
 app.use('/feed', feedRoutes)
 app.use('/postPage', postPageRoutes)
-app.use('/about', aboutRoutes)
-
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
 })
