@@ -15,6 +15,15 @@
           <h6><%= post.bookTitle %></h6>
           <p>By: <%= post.bookAuthor %></p>
         </div>
+        <div class="del-btn">
+          <form
+          action="/post/<%= post._id %>?_method=DELETE"
+          method="POST"
+          class=""
+        >
+          <button class="btn del-btn" type="submit">DELETE</button>
+        </form>
+        </div>
       </div>
     </div>
 
@@ -37,6 +46,4 @@
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../magnific-popup/jquery.magnific-popup.js"></script>
-    <script type="text/javascript" src="../magnific-popup/magnific.js"></script>
 <%- include('partials/footer') -%>

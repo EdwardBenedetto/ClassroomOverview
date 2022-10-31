@@ -56,35 +56,7 @@
   #signUpBox {
     margin-top: 100px;
   }
-  
-  #hero .col {
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-  }
-  
-  #hero .img-col {
-    justify-content: flex-end;
-  }
-  
-  #hero img {
-    max-width: 130% !important;
-    width: 130%;
-  }
-  
-  #hero .card {
-    /*box-shadow: 11px 7px 16px #f9f9f9;*/
-    box-shadow: 11px 7px 16px #9e9e9e;
-    border: 0;
-    text-align: center;
-  }
-  
-  #hero .icon {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-  }
-  
+   
   #projects .card {
     padding: 2%;
     border-radius: 10px;
@@ -167,4 +139,5 @@ align-items: center;
 .hidden {
     visibility: hidden;
   }
+
   

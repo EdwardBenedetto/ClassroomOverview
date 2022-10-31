@@ -1,7 +1,7 @@
 const Post = require("../models/Post");
 const User = require("../models/User");
 const path = require("path");
-const cloudinary = require("../middleware/cloudinary")
+// const cloudinary = require("../middleware/cloudinary")
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -26,11 +26,10 @@ module.exports = {
       author = author.join(', ')
     }
     const fileErrors = [];
-    var result = 'https://res.cloudinary.com/readalong/image/upload/v1622151204/No_Image_Selected_gpzpa2.jpg'
+    // var result = 'https://res.cloudinary.com/readalong/image/upload/v1622151204/No_Image_Selected_gpzpa2.jpg'
     if (req.file) {
       if (req.file.size > 1024 * 1024 * 3)
         fileErrors.push({ msg: "Uploaded file is larger than 3 MB" });
-
       if (
         !(
           /jpeg|jpg|png|gif/.test(
@@ -39,24 +38,18 @@ module.exports = {
         )
       )
         fileErrors.push({ msg: "Only jpeg, jpg, png and gif allowed" });
-
-
-      result = await cloudinary.uploader.upload(req.file.path);
+      // result = await cloudinary.uploader.upload(req.file.path);
     }
-
-
 
     if (fileErrors.length) {
       req.flash("errors", fileErrors);
       return res.redirect("/login");
     }
 
-
-
     try {
       await Post.create({
         image: result.secure_url,
-        cloudinaryId: result.public_id,
+        // cloudinaryId: result.public_id,
         post: req.body.post,
         bookTitle: foundBook.title,
         bookAuthor: author,
@@ -109,24 +102,14 @@ module.exports = {
   //         console.log(err)
   //     }
   // },
-  // deletePost: async (req, res)=>{
-  //     // console.log(req.body.postIdFromJSFile)
-  //     try{
-  //         await Post.findOneAndDelete({_id:req.body.postIdFromJSFile})
-  //         console.log('Deleted Todo')
-  //         res.json('Deleted It')
-  //     }catch(err){
-  //         console.log(err)
-  //     }
-  // }
 
   deletePost: async (req, res) => {
     try {
       // await Post.findOneAndDelete({_id:req.body.postIdFromJSFile})
       // Find post by id
-      let post = await Post.findById(req.params.id);
+      let post = await Post.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(post.cloudinaryId);
+      // await cloudinary.uploader.destroy(post.cloudinaryId);
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
@@ -137,3 +120,6 @@ module.exports = {
     }
   },
 };
+
+//posts/deletePost/:id", postsController.deletePost);
+//posts/:id', postsController.deletePost)

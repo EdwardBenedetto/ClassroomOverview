@@ -29,10 +29,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: false,
   },
-  cloudinaryId: {
-    type: String,
-    require: false,
-  },
+  // cloudinaryId: {
+  //   type: String,
+  //   require: false,
+  // },
   userName: {
     type: String,
     require: false,
