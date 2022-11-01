@@ -25,32 +25,30 @@ module.exports = {
     } else {
       author = author.join(', ')
     }
-    const fileErrors = [];
-    // var result = 'https://res.cloudinary.com/readalong/image/upload/v1622151204/No_Image_Selected_gpzpa2.jpg'
-    if (req.file) {
-      if (req.file.size > 1024 * 1024 * 3)
-        fileErrors.push({ msg: "Uploaded file is larger than 3 MB" });
-      if (
-        !(
-          /jpeg|jpg|png|gif/.test(
-            path.extname(req.file.originalname).toLowerCase()
-          ) && /jpeg|jpg|png|gif/.test(req.file.mimetype)
-        )
-      )
-        fileErrors.push({ msg: "Only jpeg, jpg, png and gif allowed" });
-      // result = await cloudinary.uploader.upload(req.file.path);
-    }
+    // const fileErrors = [];
+    // // var result = 'https://res.cloudinary.com/readalong/image/upload/v1622151204/No_Image_Selected_gpzpa2.jpg'
+    // if (req.file) {
+    //   if (req.file.size > 1024 * 1024 * 3)
+    //     fileErrors.push({ msg: "Uploaded file is larger than 3 MB" });
+    //   if (
+    //     !(
+    //       /jpeg|jpg|png|gif/.test(
+    //         path.extname(req.file.originalname).toLowerCase()
+    //       ) && /jpeg|jpg|png|gif/.test(req.file.mimetype)
+    //     )
+    //   )
+    //     fileErrors.push({ msg: "Only jpeg, jpg, png and gif allowed" });
+    //   // result = await cloudinary.uploader.upload(req.file.path);
+    // }
 
-    if (fileErrors.length) {
-      req.flash("errors", fileErrors);
-      return res.redirect("/login");
-    }
+    // if (fileErrors.length) {
+    //   req.flash("errors", fileErrors);
+    //   return res.redirect("/login");
+    // }
 
     try {
       await Post.create({
-        image: result.secure_url,
-        // cloudinaryId: result.public_id,
-        post: req.body.post,
+          post: req.body.post,
         bookTitle: foundBook.title,
         bookAuthor: author,
         bookThumbnail: foundBook.thumbnail,
@@ -70,10 +68,7 @@ module.exports = {
         let words = (req.body.postBody).split(' ')
         req.user.wordCount += words.length
       }
-      if (result.secure_url) {
-        req.user.imageCount += 1
-      }
-      await req.user.save()
+           await req.user.save()
       res.redirect("/post");
 
     } catch (err) {
