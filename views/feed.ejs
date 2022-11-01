@@ -1,0 +1,53 @@
+<%- include('partials/header') -%>
+
+
+
+<div class="row">
+    <% for (let i=post.length-1; i>=0; i--) { %>
+      <div class="col">
+        <a href="/postPage/<%= post[i]._id%>">
+          <div class="card my-2" style="width: 25rem;">
+            <div class="card-header" style="height: 12rem">
+              <div class="row">
+                <div class="col">
+                  <div class="container">
+                    <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
+                  </div>
+                </div>
+                <div class="col">
+                    <h4><%= post[i].userName %></h4>
+                  <h4><%= post[i].bookTitle %></h4>
+                  <span><%= post[i].bookAuthor %></span>
+                  <h4><%= post[i].userName %></h4>
+                </div>
+              </div>
+            </div>
+            <div class="card-body" style="height: 15rem">
+              <div class="row">
+                <div class="col">
+                  <h5><%= post[i].post %></h5>
+                </div>                
+              </div>
+              
+        </div>
+          </div>
+         
+        </a>
+      </div>
+    <% } %>
+    <% for (let i=0;i<(3-post.length%3);i++) { %>
+        <div class="col hidden">
+        <div class="card my-2" style="width: 25rem;">
+        <div class="card-header" style="height: 12rem">
+         </div>
+        <div class="card-body" style="height: 15rem">
+        </div>
+      </div> 
+      </div>
+      <% } %>
+        </div>
+      </div>
+</div> 
+</section>
+
+<%- include('partials/footer') -%>
