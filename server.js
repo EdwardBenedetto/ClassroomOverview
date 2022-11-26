@@ -64,5 +64,6 @@ app.use('/post', postRoutes)
 app.use('/feed', feedRoutes)
 app.use('/postPage', postPageRoutes)
 app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
+    console.log('Server is running for reading app')
 })
+tst
