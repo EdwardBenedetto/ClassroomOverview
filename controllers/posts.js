@@ -25,26 +25,6 @@ module.exports = {
     } else {
       author = author.join(', ')
     }
-    // const fileErrors = [];
-    // // var result = 'https://res.cloudinary.com/readalong/image/upload/v1622151204/No_Image_Selected_gpzpa2.jpg'
-    // if (req.file) {
-    //   if (req.file.size > 1024 * 1024 * 3)
-    //     fileErrors.push({ msg: "Uploaded file is larger than 3 MB" });
-    //   if (
-    //     !(
-    //       /jpeg|jpg|png|gif/.test(
-    //         path.extname(req.file.originalname).toLowerCase()
-    //       ) && /jpeg|jpg|png|gif/.test(req.file.mimetype)
-    //     )
-    //   )
-    //     fileErrors.push({ msg: "Only jpeg, jpg, png and gif allowed" });
-    //   // result = await cloudinary.uploader.upload(req.file.path);
-    // }
-
-    // if (fileErrors.length) {
-    //   req.flash("errors", fileErrors);
-    //   return res.redirect("/login");
-    // }
 
     try {
       await Post.create({
@@ -58,11 +38,7 @@ module.exports = {
       });
       console.log("Post has been added!");
       req.user.bookCount += 1
-      if (foundBook.pageCount) {
-        console.log(foundBook.pageCount, req.user.pagesCount)
-        req.user.pagesCount += foundBook.pageCount
-      }
-      if (req.body.postBody) {
+            if (req.body.postBody) {
         console.log((req.body.postBody).split(' '))
         console.log(((req.body.postBody).split(' ')).length, req.user.wordCount)
         let words = (req.body.postBody).split(' ')
