@@ -91,6 +91,3 @@ module.exports = {
     }
   },
 };
-
-//posts/deletePost/:id", postsController.deletePost);
-//posts/:id', postsController.deletePost)
