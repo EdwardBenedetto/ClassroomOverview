@@ -15,6 +15,7 @@ const mainRoutes = require('./routes/main');
 const postRoutes = require('./routes/posts');
 const feedRoutes = require('./routes/feed');
 const postPageRoutes = require('./routes/postPage');
+const commentRoutes = require("./routes/comments");
 
 //Require .env file in config folder
 dotenv.config({ path: "./config/.env" });
@@ -63,6 +64,8 @@ app.use('/', mainRoutes)
 app.use('/post', postRoutes)
 app.use('/feed', feedRoutes)
 app.use('/postPage', postPageRoutes)
+app.use("/comment", commentRoutes);
+
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better go catch it!')
 })
