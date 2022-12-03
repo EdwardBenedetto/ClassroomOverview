@@ -14,7 +14,7 @@ module.exports = {
       });
 
       console.log("Comment has been added!");
-      res.redirect("/post/" + req.params.id);
+      res.redirect("/postPage/" + req.params.id);
     }
 
     catch (err) {
@@ -28,9 +28,9 @@ module.exports = {
       // let comment = await Comment.findById({ _id: req.params.id });
       await Comment.deleteOne({ _id: req.params.commentid });
       console.log("Deleted Comment");
-      res.redirect("/post/" + req.params.postid);
+      res.redirect("/postPage/" + req.params.postid);
     } catch (err) {
-      res.redirect("/post/" + req.params.postid);
+      res.redirect("/postPage/" + req.params.postid);
     }
   },
 };
