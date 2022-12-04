@@ -16,7 +16,6 @@ module.exports = {
       console.log("Comment has been added!");
       res.redirect("/postPage/" + req.params.id);
     }
-
     catch (err) {
       console.log(err);
     }
