@@ -51,14 +51,17 @@
     </div>
     <ul>
       <% for(var i=0; i<comments.length; i++) {%>
-        <li class="col-6 justify-content-between mt-5"></li>
+        <li class="col-6">
         <%= comments[i].createdBy%>: "<%= comments[i].comment%>" [<%= comments[i].createdAt.toString().slice(4,16)%>]
-              <% if(post.user==user.id) {%>
-                <form action="/comment/deleteComment/<%= post.id%>/<%= comments[i]._id%>?_method=DELETE" method="POST"
-                  style="float: right; margin-top: -15px;">
-                  <button class="btn btn-primary fa fa-trash" type="submit"></button>
-                </form>
-                <% } %>
+     
+          <form
+            action="/comment/deleteComment/<%= post.id%>/<%= comments[i]._id%>?_method=DELETE"
+            method="POST"
+            class="col-3"
+          >
+            <button class="fa fa-trash" type="submit"></button>
+          </form>
+          
                   </li>
                   <% } %>
     </ul>
