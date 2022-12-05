@@ -53,7 +53,7 @@
       <% for(var i=0; i<comments.length; i++) {%>
         <li class="col-6">
         <%= comments[i].createdBy%>: "<%= comments[i].comment%>" [<%= comments[i].createdAt.toString().slice(4,16)%>]
-     
+    
           <form
             action="/comment/deleteComment/<%= post.id%>/<%= comments[i]._id%>?_method=DELETE"
             method="POST"

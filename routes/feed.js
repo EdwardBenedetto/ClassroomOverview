@@ -1,11 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const feedController = require('../controllers/feed') 
+const postsController = require('../controllers/posts') 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 const multer = require('multer')
 const upload = multer({ dest: "public/uploads/" })
 const { storage } = require("../middleware/multer");
 
 router.get('/', ensureAuth,  feedController.getFeed)
+router.post('/q', postsController.getSearch)
 
 module.exports = router
