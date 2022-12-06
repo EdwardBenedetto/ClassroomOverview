@@ -8,6 +8,5 @@ const upload = multer({ dest: "public/uploads/" })
 const { storage } = require("../middleware/multer");
 
 router.get('/', ensureAuth,  feedController.getFeed)
-router.post('/q', postsController.getSearch)
 
 module.exports = router
