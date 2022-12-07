@@ -127,4 +127,14 @@ align-items: center;
     visibility: hidden;
   }
 
+  .addEntry{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .id {
+    margin-top: -10px;
+  }
+
   
