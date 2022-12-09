@@ -1,10 +1,9 @@
-<!-- User Dashboard view -->
-<!-- how to distinguish views of teachers vs students? -->
+
 
 <%- include('partials/header') -%>
 
-<!-- Welcome User Section -->
-  <section id="welcomeUser">
+<section style="background-image: url(https://images.unsplash.com/photo-1585779034823-7e9ac8faec70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80);">
+  <!-- <section id="welcomeUser" >
     <div class="container">
       <div class="row align-items-left">
                                  <h2>Student Name:</h2>
@@ -15,8 +14,24 @@
                     <p><%= user.email %></p>
                            </div>
     </div>
-  </section>
+  </section> -->
 
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">Tell us about yourself!</h2>
+      <h2>Student Name:</h2>
+      <p><%= user.firstNameChild %></p>
+      <h2>Username:</h2>
+      <p><%= user.userName %></p>
+      <h2>Parent e-mail:</h2>
+      <p><%= user.email %></p>
+    </div>
+  </div>
+
+  <!-- Search for entry -->
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">What are you reading?</h2>
 <section id="bookSearch">
       <div class="row align-items-center" id="searchGoogle">
         <h1 style="margin-left: 26%">Add entry</h1>
@@ -28,6 +43,8 @@
         </div>
       </div>
     </section>
+  </div>
+</div>
 
 <!-- Add Post Section -->
   <section id="addAPost">
@@ -132,6 +149,7 @@
         <% }) %>
     <% } %>
 
+        </section>
 
     <script src="/js/main.js"></script>
     <script src="/js/postPage.js"></script>
