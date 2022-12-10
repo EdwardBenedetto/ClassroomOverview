@@ -28,13 +28,15 @@
     </div>
   </div>
 
+  <!-- placeholder spacing section -->
+  <section style="height: 10vh"></section>
+
   <!-- Search for entry -->
   <div class="card w-96 bg-base-100 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">What are you reading?</h2>
 <section id="bookSearch">
       <div class="row align-items-center" id="searchGoogle">
-        <h1 style="margin-left: 26%">Add entry</h1>
         <div class="addEntry">
           <div>
           <input type="text" id="title" placeholder="title">
@@ -47,13 +49,16 @@
 </div>
 
 <!-- Add Post Section -->
+
   <section id="addAPost">
+  
     <div class="container">
       <form id="post" action="/post/createPost" enctype="multipart/form-data" method='POST'>
         <div class="container">
           <div id="results" class="row cards">
             <h3>Select a book:</h3>
           </div>
+   
 
           <!--<ul id="results"></ul>-->
           <div class="pt-3">
@@ -71,7 +76,7 @@
                 <input type="text" placeholder="Tell us more" name='postBody' style="height:100px">
               </div>
               <div class="row">
-                <button type="submit" class="btn btn-lg" value="Add Post">Share Now</button>
+                <button type="submit" class="btn btn-lg" value="Add Post">Share With the Group!</button>
               </div>
             </div>
           </div>
