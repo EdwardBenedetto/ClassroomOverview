@@ -16,7 +16,9 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
-
+.background {
+  background-size:cover;
+}
    
   nav ul li a {
     color: white;
@@ -110,6 +112,10 @@
   .nav-con {
     width: 80%;
     margin: auto;
+  }
+
+  .center {
+   margin: auto; 
   }
 
   
