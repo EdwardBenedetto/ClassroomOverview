@@ -64,16 +64,16 @@
   </section>
 
 <section id="recentPosts">
-  <div class="container">
+  <div class="container col-12">
     <div class="row">
       <div class="col">
         <h2><%= user.userName %>'s Latest Reads:</h2>
       </div>
       
     </div>
-    <div class="row">
+    <ul class="row list-unstyled">
       <% for (let i=post.length-1; i>=0; i--) { %>
-        <div class="col">
+        <li class="card card-body bg-base-100 shadow-xl" style="width: 20%; margin: 20px;">
           <a href="/postPage/<%= post[i]._id%>">
             <div class="card my-3" style="width: 25rem">
               <div class="card-header" style="">
@@ -95,8 +95,9 @@
            
            
           </a>
-        </div>
+        </li>
       <% } %>
+      
       <% for (let i=0;i<(3-post.length%3);i++) { %>
           <div class="col hidden">
           <div class="card my-2" style="width: 20rem;">
