@@ -33,6 +33,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: false,
   },
+  likes: {
+    type: Number,
+    required: false,
+  },
 })
 
 module.exports = mongoose.model('Post', PostSchema)

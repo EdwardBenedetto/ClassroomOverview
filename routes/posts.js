@@ -8,9 +8,6 @@ router.get('/', ensureAuth, postsController.getProfile)
 
 router.post('/createPost',upload.single("file"), postsController.createPost)
 
-// router.put('/markComplete', postsController.markComplete)
-
-// router.put('/markIncomplete', postsController.markIncomplete)
 
 router.delete('/:id', postsController.deletePost)
 
