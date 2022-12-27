@@ -64,7 +64,7 @@
   </section>
 
 <section id="recentPosts">
-  <div class="container col-12">
+  <div class="container col-12" style="width: 70%">
     <div class="row">
       <div class="col">
         <h2><%= user.userName %>'s Latest Reads:</h2>
@@ -73,30 +73,33 @@
     </div>
     <ul class="row list-unstyled">
       <% for (let i=post.length-1; i>=0; i--) { %>
-        <li class="card" style="width: 30%; margin-left: 3%; margin-top: 3%">
+        
+        <li class="card" style="padding: 0">
           <a href="/postPage/<%= post[i]._id%>">
-           
+            
               <div class="card-header" style="">
                 <div class="row">
-                  <div class="col">
-                  
-                      <h4>"<%= post[i].bookTitle %>" <br>by <%= post[i].bookAuthor %></h4>
-                
-                      <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
-                   
+                  <div class="col" >
+                    
+                      <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80%; margin: auto;">
                   </div>
-                  <div class="col">
-                    <h5>Your thoughts: <%= post[i].post %></h5>
-                    <p><%= post[i].postBody.substring(0,90) %><% if (post[i].postBody.length > 90){ %>...<%} %></p>
-                  </div>
-                </div>
-             
 
-           
-           
-          </a>
+                  <div class="col">
+                    <h4 class="card-title"><%= post[i].bookTitle %> <br>   by <%= post[i].bookAuthor %></h4>
+                    <h5><%= post[i].post %></h5>
+                    <p><%= post[i].postBody%></p>
+                    
+                  </div>
+                  
+                  
+                </div>
+          
         </li>
       <% } %>
+
+          </div>
+        </div>
+</div> 
 
       <% for (let i=0;i<(3-post.length%3);i++) { %>
         <li class="card" style="visibility: hidden">
