@@ -11,15 +11,15 @@
   <!-- Search for entry -->
   <div class=" center card w-96 bg-base-100 shadow-xl">
     <div class="card-body">
-      <h2 class="card-title">Hi <%= user.userName %>, what are you reading?</h2>
+      <h2 class="card-title"><%= user.userName %>, what are you reading?</h2>
 <section>
       <div class="row align-items-center" id="searchGoogle">
         <div class="addEntry">
-          <div>
-          <input type="text" id="title" placeholder="title">
-          <input type="text" id="author" placeholder="author">
-          <button id="submit" type="button" class="btnn btn btn-lg">Search</button>
-        </div>
+         
+          <input type="text" id="title" placeholder="Book Title">
+          <input type="text" id="author" placeholder="Author">
+          <div id="submit" type="button" class="btnn btn btn-lg">Search</div>
+        
       </div>
     </section>
   </div>
@@ -80,13 +80,13 @@
                 <div class="row">
                   <div class="col">
                   
-                      <h4><%= post[i].bookTitle %></h4>
-                    <span><%= post[i].bookAuthor %></span>
+                      <h4>"<%= post[i].bookTitle %>" <br>by <%= post[i].bookAuthor %></h4>
+                
                       <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
                    
                   </div>
                   <div class="col">
-                    <h5><%= post[i].post %></h5>
+                    <h5>Your thoughts: <%= post[i].post %></h5>
                     <p><%= post[i].postBody.substring(0,90) %><% if (post[i].postBody.length > 90){ %>...<%} %></p>
                   </div>
                 </div>

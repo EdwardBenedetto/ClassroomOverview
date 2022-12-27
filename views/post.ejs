@@ -6,21 +6,19 @@
         <h1><%= post.post %></h1>
         <h4>By: <%= post.userName %></h4>
     </div>
-    <div class="card my-2" style="width: 25rem;">
+    <div class="card" style="width: 25rem;">
       <div class="row">
         <div class="col">
           <img class="img-fluid" src="<%= post.bookThumbnail %>" alt="<%= post.bookTitle %>">
         </div>
         <div class="col">
-          <h6><%= post.bookTitle %></h6>
-          <p>By: <%= post.bookAuthor %></p>
+          <h4 class="card-title">"<%= post.bookTitle %>"<br> by <%= post.bookAuthor %></h4>
         </div>
         <div class="del-btn">
           <form
           action="/post/<%= post._id %>?_method=DELETE"
           method="POST"
-          class=""
-        >
+          class="">
           <button class="btn del-btn" type="submit">DELETE</button>
         </form>
         </div>

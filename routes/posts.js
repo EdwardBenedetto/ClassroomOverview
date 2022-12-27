@@ -8,7 +8,6 @@ router.get('/', ensureAuth, postsController.getProfile)
 
 router.post('/createPost',upload.single("file"), postsController.createPost)
 
-
 router.delete('/:id', postsController.deletePost)
 
 module.exports = router

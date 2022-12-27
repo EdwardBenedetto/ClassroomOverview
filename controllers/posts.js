@@ -53,7 +53,7 @@ module.exports = {
       console.log(err);
     }
   },
- 
+  
   deletePost: async (req, res) => {
     try {
             let post = await Post.findById({ _id: req.params.id });
