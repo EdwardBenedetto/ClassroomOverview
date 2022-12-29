@@ -1,72 +1,61 @@
 <%- include('partials/header') -%>
 
-<section id="postDetails">
-  <div class="container">
-    <div class="row">
-        <h1><%= post.post %></h1>
-        <h4>By: <%= post.userName %></h4>
-    </div>
-    <div class="card" style="width: 25rem;">
-      <div class="row">
-        <div class="col">
-          <img class="img-fluid" src="<%= post.bookThumbnail %>" alt="<%= post.bookTitle %>">
-        </div>
-        <div class="col">
-          <h4 class="card-title">"<%= post.bookTitle %>"<br> by <%= post.bookAuthor %></h4>
-        </div>
-        <div class="del-btn">
-          <form
-          action="/post/<%= post._id %>?_method=DELETE"
-          method="POST"
-          class="">
-          <button class="btn del-btn" type="submit">DELETE</button>
-        </form>
-        </div>
+  <section id="postDetails" style="margin-top: 0">
+    <div class="container" style="width: 75%">
+
+      <div class="row" style="display: block, margin: auto">
+              <h4 class="card-title postTitle" style="margin-bottom: 20px;">"<%= post.bookTitle %>"by <%= post.bookAuthor %>
+          </h4>
       </div>
+      <img class="img-fluid" style="" src="<%= post.bookThumbnail %>" alt="<%= post.bookTitle %>">
+
+
+      <div class="row">
+
+        <% if (post.postBody) { %>
+          <div class="col" style="margin-top: 20px">
+            <p>
+            <h4>
+              <%= post.userName %>'s review: "<%= post.post %>"
+            </h4>
+            <%= post.postBody %>
+              </p>
+              <form action="/post/<%= post._id %>?_method=DELETE" method="POST" class="">
+                <button class="fa fa-trash" type="delete"></button>
+              </form>
+          </div>
+          <% } %>
+
+      </div>
+      <div style="margin-top: 20px">
+        <h2>Add a comment</h2>
+        <form action="/comment/createComment/<%= post._id%>" method="POST">
+          <div class="mb-3">
+            <input type="text" class="form-control" id="comment" name="comment">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <ul>
+        <% for(var i=0; i<comments.length; i++) {%>
+          <li class="col-6" style="margin-top: 10px">
+            <div style="display: flex">
+              <%= comments[i].createdBy%>: "<%= comments[i].comment%>" [<%=
+                    comments[i].createdAt.toString().slice(4,16)%>
+                    ]
+
+                    <form action="/comment/deleteComment/<%= post.id%>/<%= comments[i]._id%>?_method=DELETE"
+                      method="POST" class="col-3">
+                      <button class="fa fa-trash" type="submit" style="float:right,margin-top: 2%"></button>
+                    </form>
+            </div>
+          </li>
+          <% } %>
+      </ul>
+
     </div>
-
-    <div class="row">
-
-      <% if (post.postBody) { %>
-        <div class="col">
-          <p><%= post.postBody %></p>
-        </div>
-      <% } %>
-      <% if (post.image) { %>
-        <div class="col">
-          <img src="<%= post.image %>" alt="<%= post.post %>" style="max-width: 50%">
-        </div>
-      <% } %>
-    </div>
-    <div>
-      <h2>Add a comment</h2>
-      <form action="/comment/createComment/<%= post._id%>" method="POST">
-        <div class="mb-3">
-          <input type="text" class="form-control" id="comment" name="comment">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-    <ul>
-      <% for(var i=0; i<comments.length; i++) {%>
-        <li class="col-6">
-        <%= comments[i].createdBy%>: "<%= comments[i].comment%>" [<%= comments[i].createdAt.toString().slice(4,16)%>]
-    
-          <form
-            action="/comment/deleteComment/<%= post.id%>/<%= comments[i]._id%>?_method=DELETE"
-            method="POST"
-            class="col-3"
-          >
-            <button class="fa fa-trash" type="submit"></button>
-          </form>
-          
-                  </li>
-                  <% } %>
-    </ul>
-
-  </div>
-</section>
+  </section>
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<%- include('partials/footer') -%>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <%- include('partials/footer') -%>

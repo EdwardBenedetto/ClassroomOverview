@@ -109,21 +109,8 @@
         </div>
   </div> 
 </section>
-
-
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>
-    <% } %>
-    <% if (locals.messages.info) { %>
-        <% messages.info.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>
-    <% } %>
-
         </section>
-
-    <script src="/js/main.js"></script>
-    <script src="/js/postPage.js"></script>
+<script src="/js/main.js"></script>
+  <script src="/js/postPage.js"></script>
+    
     <%- include('partials/footer') -%>

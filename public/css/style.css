@@ -1,143 +1,134 @@
 #post {
-    display: none;
-  }
-  #allPosts {
-    display: none;
-  }
-  
-
-  body {
-    display: block;
-    overflow-x: hidden;
-  }
-  
-  .navbar {
-    color: white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-.background {
-  background-size:cover;
+  display: none;
 }
-   
-  nav ul li a {
-    color: white;
-    font-size: 22px;
-    margin: auto 10px;
-  }
-  
-  nav ul li a:hover {
-    color: white;
-    text-decoration: underline;
-  }
-  
-  section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  
-  section h1,
-  section h2 {
-    text-transform: uppercase;
-    font-weight: 900;
-    color: #2f2e41;
-    text-align: left;
-    margin-bottom: 20px
-  }
-  
-  section p {
-    font-size: 16px;
-    font-weight: 300;
-  }
-  
-  #myCarousel,
-  #welcomeUser,
-  #socialFeed,
-  #postDetails,
-  #about,
-  #logInBox,
-  #signUpBox {
-    margin-top: 100px;
-  }
-   
- 
-  
-  #socialFeed a,
-  #socialFeed a:hover,
-  #socialFeed a:active,
-  #socialFeed a:visited,
-  #recentPosts a,
-  #recentPosts a:hover,
-  #recentPosts a:active,
-  #recentPosts a:visited,
-  #allPosts a,
-  #allPosts a:hover,
-  #allPosts a:active,
-  #allPosts a:visited {
-    text-decoration: none;
-    color: black;
-  }
-  
-  #socialFeed  .card,
-  #allPosts  .card,
-  #recentPosts  .card {
-    box-shadow: 11px 7px 16px #9e9e9e;
-    border: 0;
-  }
-  
-    
+
+#allPosts {
+  display: none;
+}
+
+body {
+  display: block;
+  overflow-x: hidden;
+}
+
+.navbar {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.background {
+  background-size: cover;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 22px;
+  margin: auto 10px;
+}
+
+nav ul li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+section h1,
+section h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #2f2e41;
+  text-align: left;
+  margin-bottom: 20px
+}
+
+section p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#logInBox,
+#signUpBox {
+  margin-top: 100px;
+}
+
+
+
+
+
 .btn {
-    background-color: navy;
-    border-radius: 5px;
-    color: white;
-  }
-  
- 
+  background-color: navy;
+  border-radius: 5px;
+  color: white;
+}
+
+
 
 
 .hidden {
-    visibility: hidden;
-  }
+  visibility: hidden;
+}
 
-  * {
-    /* border: 1px solid red !important; */
-     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-  }
+* {
+  /* border: 1px solid red !important; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
 
-  .berry {
-    height: auto;
-    width: 5%;
-  }
+.berry {
+  height: auto;
+  width: 5%;
+}
 
-  .nav-con {
-    width: 80%;
-    margin: auto;
-  }
+.nav-con {
+  width: 80%;
+  margin: auto;
+}
 
-  .center {
-   margin: auto; 
-  }
+.center {
+  margin: auto;
+}
 
-  .btnn {
-    position: absolute;
-margin-top: -8%;
-margin-left: 4%;
-  }
+.btnn {
+  position: absolute;
+  margin-top: -8%;
+  margin-left: 4%;
+}
 
-  .card {
-    margin-top: 0%;
-  }
+.card {
+  margin-top: 0%;
+}
 
-  .feedTop {
-    display: block;
-    margin-left: 2%;
-  }
+.feedTop {
+  display: block;
+  margin-left: 2%;
+}
 
-  .feedText {
-    margin-top: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
+.feedText {
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
-  
+.postInfo {
+  width: 60%;
+  margin: auto;
+}
+
+.postTitle {
+margin: 0;
+}
+
+.postInfo {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.delBook {
+  display: flex;
+  width: 100%;
+}
+
