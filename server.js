@@ -66,6 +66,6 @@ app.use('/feed', feedRoutes)
 app.use('/postPage', postPageRoutes)
 app.use("/comment", commentRoutes);
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT||3000, ()=>{
     console.log('Server is running, you better go catch it!')
 })
