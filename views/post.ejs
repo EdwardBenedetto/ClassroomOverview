@@ -38,7 +38,7 @@
       </div>
       <ul>
         <% for(var i=0; i<comments.length; i++) {%>
-          <li class="col-6" style="margin-top: 10px">
+          <li class="col-6 postFormat" style="margin-top: 10px">
             <div style="display: flex">
               <%= comments[i].createdBy%>: "<%= comments[i].comment%>" [<%=
                     comments[i].createdAt.toString().slice(4,16)%>
