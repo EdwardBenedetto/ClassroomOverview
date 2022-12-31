@@ -23,6 +23,11 @@ Full stack web app utilizing the Google Books API to allow users to create lists
 
 https://bookbuddies.up.railway.app/
 
+<a href="https://ibb.co/FgLtnq6"><img src="https://i.ibb.co/MMxL95n/1.jpg" alt="1" border="0"></a>
+<a href="https://ibb.co/gRfYC7s"><img src="https://i.ibb.co/crZqdvz/2.jpg" alt="2" border="0"></a>
+<a href="https://ibb.co/2PcHpVd"><img src="https://i.ibb.co/vmLRMyk/3.jpg" alt="3" border="0"></a>
+<a href="https://ibb.co/HBkgmK6"><img src="https://i.ibb.co/GnbPgdy/4.jpg" alt="4" border="0"></a>
+
 ## How It's Made:
 
 **Tech used:** HTML, CSS, JavaScript, Express, Node, Tailwind, EJS, MongoDB, Cloudinary, Google Books API
